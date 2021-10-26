@@ -4,12 +4,11 @@ import {
 	Checkbox,
 	FormControlLabel,
 	Paper,
-	Typography
+	Typography,
+	LinearProgress
 } from '@mui/material';
 import { FormEvent, useEffect } from 'react';
 import useLocalStorage from 'use-local-storage';
-
-import questions from '../data';
 
 type Question = {
 	name: string;
@@ -18,18 +17,25 @@ type Question = {
 		right: boolean;
 	}[];
 };
-const Questions = () => {
+
+type Props = {
+	data: Question[];
+};
+
+const Questions = (props: Props) => {
 	const [index, setIndex] = useLocalStorage('index', 0);
-	let question = questions[index];
+	let question: Question = props.data[index];
 	const [checked, setChecked] = useLocalStorage<boolean[]>(
 		'checked',
 		new Array(question.answers.length).fill(false)
 	);
 	const [done, setDone] = useLocalStorage('done', false);
 	const [wrong, setWrong] = useLocalStorage<number[]>('wrong', []);
+	const [answered, setAnswered] = useLocalStorage<number[]>('answered', []);
 
 	useEffect(() => {
-		question = questions[index];
+		question = props.data[index];
+		question.answers = question.answers.sort((_a, _b) => 0.5 - Math.random());
 		setDone(false);
 		setChecked(new Array(question.answers.length).fill(false));
 	}, [index]);
@@ -38,7 +44,7 @@ const Questions = () => {
 		console.log(checked);
 	}, [checked]);
 
-	const handleChange = (e: any, i: number) => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
 		setChecked(p => {
 			const arr = [...p];
 			arr[i] = e.target.checked;
@@ -47,6 +53,7 @@ const Questions = () => {
 	};
 
 	const reset = () => {
+		setAnswered([]);
 		setDone(false);
 		setIndex(0);
 		setChecked(new Array(question.answers.length).fill(false));
@@ -56,6 +63,9 @@ const Questions = () => {
 	const handleCheck = (e: FormEvent) => {
 		e.preventDefault();
 		setDone(true);
+		if (!answered.includes(index)) {
+			setAnswered(p => [...p, index]);
+		}
 		if (
 			checked.some((element, i) => element !== question.answers[i].right) &&
 			!wrong.includes(index)
@@ -66,6 +76,24 @@ const Questions = () => {
 
 	return (
 		<>
+			{answered.length !== 0 && (
+				<Box sx={{ width: '100%' }}>
+					<Box sx={{ width: '100%' }}>
+						<LinearProgress
+							variant="determinate"
+							value={((answered.length - wrong.length) / answered.length) * 100}
+						/>
+					</Box>
+					<Typography textAlign="center">
+						{(
+							((answered.length - wrong.length) / answered.length) *
+							100
+						).toFixed(2)}
+						% correct answers
+					</Typography>
+				</Box>
+			)}
+
 			<Paper
 				component="form"
 				onSubmit={handleCheck}
@@ -113,7 +141,7 @@ const Questions = () => {
 						Previous question
 					</Button>
 					<Button
-						disabled={index === questions.length - 1}
+						disabled={index === props.data.length - 1}
 						onClick={() => setIndex(p => p + 1)}
 						type="button"
 						sx={{ alignSelf: 'flex-end', mt: 2 }}

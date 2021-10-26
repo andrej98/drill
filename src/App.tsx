@@ -7,7 +7,6 @@ import {
 	ThemeProvider,
 	Toolbar
 } from '@mui/material';
-import { useState } from 'react';
 import {
 	BrowserRouter,
 	Switch,
@@ -15,6 +14,8 @@ import {
 	Link as RouterLink
 } from 'react-router-dom';
 
+import pv157mid from './data/pv157-mid';
+import pv157 from './data/pv157';
 import About from './components/About';
 import NotFound from './components/NotFound';
 import Questions from './pages/Questions';
@@ -52,7 +53,12 @@ const App = () => (
 				}}
 			>
 				<Switch>
-					<Route exact path="/" render={() => <Questions />} />
+					<Route exact path="/" render={() => <Questions data={pv157mid} />} />
+					<Route
+						exact
+						path="/secret"
+						render={() => <Questions data={pv157} />}
+					/>
 					<Route exact path="/about" render={() => <About />} />
 
 					<Route render={() => <NotFound />} />
