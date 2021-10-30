@@ -7,7 +7,7 @@ import {
 	Typography,
 	LinearProgress
 } from '@mui/material';
-import { FormEvent, useEffect } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 
 type Question = {
@@ -33,6 +33,15 @@ const Questions = (props: Props) => {
 	const [wrong, setWrong] = useLocalStorage<number[]>('wrong', []);
 	const [answered, setAnswered] = useLocalStorage<number[]>('answered', []);
 
+	// const [index, setIndex] = useState(0);
+	// let question: Question = props.data[index];
+	// const [checked, setChecked] = useState<boolean[]>(
+	// 	new Array(question.answers.length).fill(false)
+	// );
+	// const [done, setDone] = useState(false);
+	// const [wrong, setWrong] = useState<number[]>([]);
+	// const [answered, setAnswered] = useState<number[]>([]);
+
 	useEffect(() => {
 		question = props.data[index];
 		question.answers = question.answers.sort((_a, _b) => 0.5 - Math.random());
@@ -40,9 +49,15 @@ const Questions = (props: Props) => {
 		setChecked(new Array(question.answers.length).fill(false));
 	}, [index]);
 
-	useEffect(() => {
-		console.log(checked);
-	}, [checked]);
+	// useEffect(() => {
+	// 	console.log('now');
+	// 	reset();
+	// 	return () => localStorage.clear();
+	// }, []);
+
+	// useEffect(() => {
+	// 	console.log(checked);
+	// }, [checked]);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
 		setChecked(p => {
