@@ -23,24 +23,26 @@ type Props = {
 };
 
 const Questions = (props: Props) => {
-	const [index, setIndex] = useLocalStorage('index', 0);
-	let question: Question = props.data[index];
-	const [checked, setChecked] = useLocalStorage<boolean[]>(
-		'checked',
-		new Array(question.answers.length).fill(false)
-	);
-	const [done, setDone] = useLocalStorage('done', false);
-	const [wrong, setWrong] = useLocalStorage<number[]>('wrong', []);
-	const [answered, setAnswered] = useLocalStorage<number[]>('answered', []);
+	// const [index, setIndex] = useLocalStorage('index', 0);
 
-	// const [index, setIndex] = useState(0);
-	// let question: Question = props.data[index];
-	// const [checked, setChecked] = useState<boolean[]>(
+	// let question: Question = props.data[index >= props.data.length ? 0 : index];
+
+	// const [checked, setChecked] = useLocalStorage<boolean[]>(
+	// 	'checked',
 	// 	new Array(question.answers.length).fill(false)
 	// );
-	// const [done, setDone] = useState(false);
-	// const [wrong, setWrong] = useState<number[]>([]);
-	// const [answered, setAnswered] = useState<number[]>([]);
+	// const [done, setDone] = useLocalStorage('done', false);
+	// const [wrong, setWrong] = useLocalStorage<number[]>('wrong', []);
+	// const [answered, setAnswered] = useLocalStorage<number[]>('answered', []);
+
+	const [index, setIndex] = useState(0);
+	let question: Question = props.data[index];
+	const [checked, setChecked] = useState<boolean[]>(
+		new Array(question.answers.length).fill(false)
+	);
+	const [done, setDone] = useState(false);
+	const [wrong, setWrong] = useState<number[]>([]);
+	const [answered, setAnswered] = useState<number[]>([]);
 
 	useEffect(() => {
 		question = props.data[index];
@@ -49,11 +51,15 @@ const Questions = (props: Props) => {
 		setChecked(new Array(question.answers.length).fill(false));
 	}, [index]);
 
-	// useEffect(() => {
-	// 	console.log('now');
-	// 	reset();
-	// 	return () => localStorage.clear();
-	// }, []);
+	useEffect(() => {
+		console.log('now');
+		reset();
+		setIndex(0);
+		return () => {
+			localStorage.clear();
+			localStorage.setItem('index', '0');
+		};
+	}, []);
 
 	// useEffect(() => {
 	// 	console.log(checked);
