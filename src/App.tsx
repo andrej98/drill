@@ -16,6 +16,7 @@ import {
 import { useEffect } from 'react';
 
 import pv157mid from './data/pv157-mid';
+import pv157diff from './data/pv157diff';
 import pv157 from './data/pv157';
 import pa017 from './data/pa017';
 import About from './components/About';
@@ -44,6 +45,9 @@ const App = () => {
 						<Button component={RouterLink} to="/pv157">
 							Exam
 						</Button>
+						<Button component={RouterLink} to="/pv157-diff">
+							Diff
+						</Button>
 						<Button component={RouterLink} to="/about">
 							About
 						</Button>
@@ -71,6 +75,9 @@ const App = () => {
 					</Route>
 					<Route key="pv157" exact path="/pv157">
 						<Questions data={pv157} />
+					</Route>
+					<Route key="pv157diff" exact path="/pv157-diff">
+						<Questions data={pv157diff} />
 					</Route>
 
 					<Route key="pa017" exact path="/secret">
