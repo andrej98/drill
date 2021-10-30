@@ -26,11 +26,11 @@ import theme from './theme';
 const App = () => {
 	const location = useLocation();
 
-	// useEffect(() => {
-	// 	console.log(location);
+	useEffect(() => {
+		console.log(location);
 
-	// 	localStorage.clear();
-	// }, [location]);
+		localStorage.clear();
+	}, [location]);
 
 	return (
 		<ThemeProvider theme={theme}>
