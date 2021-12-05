@@ -8,7 +8,7 @@ import {
 	LinearProgress
 } from '@mui/material';
 import { FormEvent, useEffect, useState } from 'react';
-import useLocalStorage from 'use-local-storage';
+// import useLocalStorage from 'use-local-storage';
 
 type Question = {
 	name: string;
@@ -51,19 +51,15 @@ const Questions = (props: Props) => {
 		setChecked(new Array(question.answers.length).fill(false));
 	}, [index]);
 
-	useEffect(() => {
-		console.log('now');
-		reset();
-		setIndex(0);
-		return () => {
-			localStorage.clear();
-			localStorage.setItem('index', '0');
-		};
-	}, []);
-
 	// useEffect(() => {
-	// 	console.log(checked);
-	// }, [checked]);
+	// 	console.log('now');
+	// 	// reset();
+	// 	// setIndex(0);
+	// 	return () => {
+	// 		localStorage.clear();
+	// 		// localStorage.setItem('index', '0');
+	// 	};
+	// }, []);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
 		setChecked(p => {
@@ -183,7 +179,14 @@ const Questions = (props: Props) => {
 			>
 				<Typography>Wrong answers:</Typography>
 				{wrong.map((element, i) => (
-					<Button key={i} variant="contained" onClick={() => setIndex(element)}>
+					<Button
+						key={i}
+						variant="contained"
+						onClick={() => {
+							setIndex(element);
+							window.scrollTo(0, 0);
+						}}
+					>
 						{element + 1}
 					</Button>
 				))}

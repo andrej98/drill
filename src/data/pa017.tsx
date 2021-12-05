@@ -42,16 +42,16 @@ const questions = [
 			},
 			{
 				body: 'Návrh.',
-				right: false
+				right: true
 			},
 			{
 				body: 'Psaní kódu.',
-				right: true
+				right: false
 			}
 		]
 	},
 	{
-		name: 'Mezi životní cykly vývoje dle obrysové (požiadavky nie su striktne dané, iba cca 50% - 70% presne dané) specifikace patří:',
+		name: 'Mezi životní cykly vývoje dle obrysové (požiadavky nie sú striktne dané, iba cca 50% - 70% presne dané) specifikace patří:',
 		answers: [
 			{
 				body: 'Vodopád.',
@@ -195,7 +195,7 @@ const questions = [
 			},
 			{
 				body: 'Rychlost změn globálních atributů systému lze předvídat.',
-				right: false
+				right: true
 			},
 			{
 				body: 'Rychlost změn globálních atributů systému je náhodná.',
@@ -863,6 +863,822 @@ const questions = [
 			{
 				body: 'Brooksův zákon',
 				right: false
+			}
+		]
+	},
+	{
+		name: 'Funkční body měří:',
+		answers: [
+			{
+				body: 'aplikační kód',
+				right: false
+			},
+			{
+				body: 'aplikační funkce',
+				right: true
+			},
+			{
+				body: 'aplikační data',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Funkční body vztažené k transakčním funkcím jsou:',
+		answers: [
+			{
+				body: 'Externí výstupy (EO - External Outputs)',
+				right: true
+			},
+			{
+				body: 'Vnitřní logické soubory (ILF - Internal Logical Files)',
+				right: false
+			},
+			{
+				body: 'Soubory vnějšího rozhraní (EIF - External Interface Files)',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Funkční body vztažené k datovým funkcím jsou:',
+		answers: [
+			{
+				body: 'Externí výstupy (EO - External Outputs)',
+				right: false
+			},
+			{
+				body: 'Vnitřní logické soubory (ILF - Internal Logical Files)',
+				right: true
+			},
+			{
+				body: 'Soubory vnějšího rozhraní (EIF - External Interface Files)',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Uživatelem v aplikaci udržovaná tabulka nebo soubor je z pohledu FP:',
+		answers: [
+			{
+				body: 'Externí vstup (EI - External Inputs)',
+				right: false
+			},
+			{
+				body: 'Vnitřní logický soubor (ILF - Internal Logical Files)',
+				right: true
+			},
+			{
+				body: 'Soubor vnějšího rozhraní (EIF - External Interface Files)',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Databáze čtená pomocí jiné aplikace je z pohledu FP:',
+		answers: [
+			{
+				body: 'Externí vstup (EI - External Inputs)',
+				right: false
+			},
+			{
+				body: 'Vnitřní logický soubor (ILF - Internal Logical Files)',
+				right: false
+			},
+			{
+				body: 'Soubor vnějšího rozhraní (EIF - External Interface Files)',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Datová obrazovka s přidáním, změnou a rušením se z pohledu FP považuje za:',
+		answers: [
+			{
+				body: 'Externí vstupy (EI - External Inputs)',
+				right: true
+			},
+			{
+				body: 'Externí výstupy (EO - External Outputs)',
+				right: false
+			},
+			{
+				body: 'Externí dotazy (EQ - External Enquiry)',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Datová obrazovka s přidáním, změnou a rušením se započítá jako:',
+		answers: [
+			{
+				body: '1 Externí vstup (EI - External Inputs)',
+				right: false
+			},
+			{
+				body: '3 Externí vstupy (EI - External Inputs)',
+				right: true
+			},
+			{
+				body: '1 Externí dotaz (EQ - External Enquiry)',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Automatická data nebo transakce směrem k jiným aplikacím se započítá jako:',
+		answers: [
+			{
+				body: 'Externí výstup (EO - External Outputs)',
+				right: true
+			},
+			{
+				body: 'Vnitřní logický soubor (ILF - Internal Logical Files)',
+				right: false
+			},
+			{
+				body: 'Soubor vnějšího rozhraní (EIF - External Interface Files)',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Při výpočtu neupravených funkčních bodů se používá:',
+		answers: [
+			{
+				body: '14 charakteristik hodnocených podle stupně vlivu na aplikaci',
+				right: false
+			},
+			{
+				body: 'matice složitosti vstupů',
+				right: true
+			},
+			{
+				body: 'matice složitosti souborů',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Při výpočtu upravených funkčních bodů z neupravených funkčních bodů se používá:',
+		answers: [
+			{
+				body: '14 charakteristik hodnocených podle stupně vlivu na aplikaci',
+				right: true
+			},
+			{
+				body: 'matice složitosti vstupů',
+				right: false
+			},
+			{
+				body: 'matice složitosti souborů',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Funkční body měří:',
+		answers: [
+			{
+				body: 'Velikost SW',
+				right: true
+			},
+			{
+				body: 'Délku zdrojového kódu',
+				right: false
+			},
+			{
+				body: 'Složitost',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Hodnota LOC (resp. SLOC) udává:',
+		answers: [
+			{
+				body: 'Velikost SW',
+				right: true
+			},
+			{
+				body: 'Délku zdrojového kódu',
+				right: true
+			},
+			{
+				body: 'Složitost kódu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Poměr velikosti zdrojového kódu a dokumentace je metrika:',
+		answers: [
+			{
+				body: 'Produktu',
+				right: true
+			},
+			{
+				body: 'Procesu',
+				right: false
+			},
+			{
+				body: 'Zdrojů',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Úsilí vynaložené na jeden funkční bod při vývoji aplikace je metrika:',
+		answers: [
+			{
+				body: 'Produktu',
+				right: false
+			},
+			{
+				body: 'Procesu',
+				right: true
+			},
+			{
+				body: 'Zdrojů',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Počet vysokoškolsky vzdělaných členů vývojového týmu je metrika: ',
+		answers: [
+			{
+				body: 'Produktu',
+				right: false
+			},
+			{
+				body: 'Procesu',
+				right: false
+			},
+			{
+				body: 'Zdrojů',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Metrika LOC (Line of Code) je:',
+		answers: [
+			{
+				body: 'Závislé na programátorovi',
+				right: true
+			},
+			{
+				body: 'Nezávislé na použitých technologiích',
+				right: false
+			},
+			{
+				body: 'Náročné na výpočet',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Metrika FP (Function points) je:',
+		answers: [
+			{
+				body: 'Nezávislá na programovacím jazyku',
+				right: true
+			},
+			{
+				body: 'Závislá na programátorovi',
+				right: false
+			},
+			{
+				body: 'Závislá na velikosti týmu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Pro dva programy, které dělají totéž, přičemž jeden je napsaný v asembleru a druhý v Javě, bude platit:',
+		answers: [
+			{
+				body: 'Program napsaný v Javě má více FP',
+				right: false
+			},
+			{
+				body: 'Program napsaný v asembleru má méně FP',
+				right: false
+			},
+			{
+				body: 'Oba programy mají stejný počet FP',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Pro dva programy, které dělají totéž, přičemž jeden je napsaný v asembleru a druhý v Javě, bude platit:',
+		answers: [
+			{
+				body: 'Program napsaný v Javě má méně LOC',
+				right: true
+			},
+			{
+				body: 'Program napsaný v asembleru má více LOC',
+				right: true
+			},
+			{
+				body: 'Oba programy mají stejný počet LOC',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Cyklomatická složitost:',
+		answers: [
+			{
+				body: 'Udává minimální počet lineárně nezávislých cest skrz zdrojový kód.',
+				right: true
+			},
+			{
+				body: 'Ukazuje, jak složité bude testování.',
+				right: true
+			},
+			{
+				body: 'Udává velikost zdrojového kódu v jednotlivých nezávislých cestách programem.',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Která z následujících metrik velikosti SW je nejnáročnější na výpočet:',
+		answers: [
+			{
+				body: 'Počet řádků zdrojového kódu',
+				right: false
+			},
+			{
+				body: 'Funkční body',
+				right: true
+			},
+			{
+				body: 'Cyklomatická složitost',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Mezi aspekty kvality SW patří odchylky od:',
+		answers: [
+			{
+				body: 'požadavků',
+				right: true
+			},
+			{
+				body: 'standardů',
+				right: true
+			},
+			{
+				body: 'běžných zvyklostí',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Mezi aspekty kvality SW patří odchylky od:',
+		answers: [
+			{
+				body: 'požadavků',
+				right: true
+			},
+			{
+				body: 'standardů',
+				right: true
+			},
+			{
+				body: 'kritérií interního auditu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Mezi kategorie faktorů kvality SW patří:',
+		answers: [
+			{
+				body: 'operační charakteristiky',
+				right: true
+			},
+			{
+				body: 'schopnost akceptovat změny',
+				right: true
+			},
+			{
+				body: 'adaptibilita na nové prostředí',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Množství výpočetních prostředků a kódu, které program potřebuje na splnění svých funkcí, se označuje jako:',
+		answers: [
+			{
+				body: 'Spolehlivost',
+				right: false
+			},
+			{
+				body: 'Efektivita',
+				right: true
+			},
+			{
+				body: 'Použitelnost',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Úsilí vyžadované na vyhledání a opravu chyby v programu, se označuje jako:',
+		answers: [
+			{
+				body: 'Testovatelnost',
+				right: false
+			},
+			{
+				body: 'Efektivita',
+				right: false
+			},
+			{
+				body: 'Udržovatelnost',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Rozsah toho, jak program splňuje specifikaci a uživatelovy záměry, se označuje jako:',
+		answers: [
+			{
+				body: 'Korektnost',
+				right: true
+			},
+			{
+				body: 'Použitelnost',
+				right: false
+			},
+			{
+				body: 'Spolehlivost',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Mezi skupiny faktorů kvality (McCall) patří:',
+		answers: [
+			{
+				body: 'Činnost produktu',
+				right: true
+			},
+			{
+				body: 'Revize produktu',
+				right: true
+			},
+			{
+				body: 'Přemístění produktu',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'SW projekt považujeme za dokončený s výhradami pokud:',
+		answers: [
+			{
+				body: 'je dokončen včas, bez překročení rozpočtu, se všemi specifikovanými rysy a funkcemi.',
+				right: false
+			},
+			{
+				body: 'je dokončen se všemi specifikovanými rysy a funkcemi, ale překročil rozpočet nebo je opožděný.',
+				right: true
+			},
+			{
+				body: 'je dokončen včas, bez překročení rozpočtu, ale má méně rysů a funkcí, než bylo původně specifikováno.',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'SW projekt považujeme za neúspěšný pokud:',
+		answers: [
+			{
+				body: 'byl zastaven před dokončením, ',
+				right: true
+			},
+			{
+				body: 'nebyl implementován, ',
+				right: true
+			},
+			{
+				body: 'výsledek byl vyřazen po instalaci.',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Cena odstranění závady je zpravidla nejvyšší ve fázi:',
+		answers: [
+			{
+				body: 'Analýzy',
+				right: false
+			},
+			{
+				body: 'Testování',
+				right: false
+			},
+			{
+				body: 'Provozu',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Klasifikace defektů (např. ODC) napomáhá:',
+		answers: [
+			{
+				body: 'Opravit defekt rychleji a efektivněji',
+				right: false
+			},
+			{
+				body: 'Určit etapu projektu, kdy defekt vznikl',
+				right: true
+			},
+			{
+				body: 'Kvantifikovat počty defektů, které způsobily jednotlivé osoby v týmu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Chyby, které lze opravit zlepšeným řízením sdílených a RT prostředků, se označují jako chyby:',
+		answers: [
+			{
+				body: 'časování/serializace ',
+				right: true
+			},
+			{
+				body: 'sestavení/spojování',
+				right: false
+			},
+			{
+				body: 'přiřazení/ověřování',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Defekty typu „rozhraní“ mají své příčiny obvykle ve fázi:',
+		answers: [
+			{
+				body: 'Analýzy',
+				right: false
+			},
+			{
+				body: 'Návrhu',
+				right: true
+			},
+			{
+				body: 'Psaní kódu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Obvyklé (správné) pořadí testů je:',
+		answers: [
+			{
+				body: 'integrační testy, unit testy, systémové testy, ',
+				right: false
+			},
+			{
+				body: 'unit testy, integrační testy, systémové testy ',
+				right: true
+			},
+			{
+				body: 'systémové testy, integrační testy, unit testy',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Co ukazuje testování',
+		answers: [
+			{
+				body: 'výkon',
+				right: true
+			},
+			{
+				body: 'chyby',
+				right: true
+			},
+			{
+				body: 'nepřítomnost defektů',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Test proti vnitřní činnosti SW se označuje jako:',
+		answers: [
+			{
+				body: 'Verifikace',
+				right: true
+			},
+			{
+				body: 'Validace',
+				right: false
+			},
+			{
+				body: 'Test typu „bílá skříňka“',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Test proti specifikovaným funkcím SW se označuje jako:',
+		answers: [
+			{
+				body: 'Validace',
+				right: true
+			},
+			{
+				body: 'Test typu „bílá skříňka“',
+				right: false
+			},
+			{
+				body: 'Test typu „černá skříňka“',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Drivery se používají při:',
+		answers: [
+			{
+				body: 'Unit testech',
+				right: true
+			},
+			{
+				body: 'Integračních testech shora – dolů',
+				right: false
+			},
+			{
+				body: 'Integračních testech zdola – nahoru',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Tzv. „stubs“ se používají při:',
+		answers: [
+			{
+				body: 'Unit testech',
+				right: false
+			},
+			{
+				body: 'Integračních testech shora – dolů',
+				right: true
+			},
+			{
+				body: 'Integračních testech zdola – nahoru',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Cyklomatická složitost ukazuje náročnost:',
+		answers: [
+			{
+				body: 'Testování typu „bílá skříňka“',
+				right: true
+			},
+			{
+				body: 'Testování typu „černá skříňka“',
+				right: false
+			},
+			{
+				body: 'Integračních testů',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Do týmu, který se účastní inspekce SW, patří:',
+		answers: [
+			{
+				body: 'Inspektor',
+				right: true
+			},
+			{
+				body: 'Tester',
+				right: false
+			},
+			{
+				body: 'Autor',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Do týmu, který se účastní inspekce SW, patří:',
+		answers: [
+			{
+				body: 'Zapisovatel',
+				right: true
+			},
+			{
+				body: 'Tester',
+				right: false
+			},
+			{
+				body: 'Vedoucí týmu',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Mezi cíle formálního přezkoušení SW patří:',
+		answers: [
+			{
+				body: 'Zajištění jednotného vývoje',
+				right: true
+			},
+			{
+				body: 'Odhalení chyb',
+				right: true
+			},
+			{
+				body: 'Zefektivnění vývojového procesu',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Defekty, které způsobují pád systému a zabraňují tak v jeho používání, se označují jako:',
+		answers: [
+			{
+				body: 'Kritické',
+				right: true
+			},
+			{
+				body: 'Středně závažné',
+				right: false
+			},
+			{
+				body: 'Kosmetické',
+				right: false
+			}
+		]
+	},
+	{
+		name: 'Vrchol počtu pracovníků v průběhu SW projektu je:',
+		answers: [
+			{
+				body: 'Ihned na samém začátku projektu',
+				right: false
+			},
+			{
+				body: 'Cca ve 40% doby trvání projektu',
+				right: true
+			},
+			{
+				body: 'Před fází nasazení na produkční prostředí zákazníka',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Projektová kalkulace SW projektu by měla zahrnovat:',
+		answers: [
+			{
+				body: 'Odhady pracnosti',
+				right: true
+			},
+			{
+				body: 'Rizika',
+				right: true
+			},
+			{
+				body: 'Subdodávky',
+				right: true
+			}
+		]
+	},
+	{
+		name: 'Projektová kalkulace SW projektu by měla zahrnovat:',
+		answers: [
+			{
+				body: 'Odhady času',
+				right: false
+			},
+			{
+				body: 'HW náklady',
+				right: true
+			},
+			{
+				body: 'Náklady na licence',
+				right: true
 			}
 		]
 	}
