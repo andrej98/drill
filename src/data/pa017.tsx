@@ -1049,7 +1049,7 @@ const questions = [
 			},
 			{
 				body: 'Složitost',
-				right: true
+				right: false
 			}
 		]
 	},
