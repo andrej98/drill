@@ -688,7 +688,7 @@ const questions = [
 		answers: [
 			{
 				body: 'Hybridní karty.',
-				right: false
+				right: true
 			},
 			{
 				body: 'Bezkontaktní karty.',
@@ -1992,7 +1992,7 @@ const questions = [
 			},
 			{
 				body: 'procesy nesmějí zapisovat data do nižší úrovně',
-				right: true
+				right: false
 			},
 			{
 				body: 'zachovává integritu dat',
@@ -2186,7 +2186,7 @@ const questions = [
 		answers: [
 			{
 				body: 'K zajištění důvěrnosti',
-				right: true
+				right: false
 			},
 			{
 				body: 'K zajištění integrity',
@@ -3631,7 +3631,7 @@ const questions = [
 			},
 			{
 				body: 'Cena padělání jednoho kusu klesá při uplatnitelnosti mnohakusové série padělku.',
-				right: false
+				right: true
 			},
 			{
 				body: 'Relativní cena padělání se zvyšuje s každým dalším padělkem.',
@@ -3994,7 +3994,7 @@ const questions = [
 			},
 			{
 				body: 'Fyzická překážka kolem čipu karty ztěžující neautorizovaný přístup.',
-				right: false
+				right: true
 			},
 			{
 				body: 'Odolnost proti útokům vyžadujícím fyzický přístup ke kartě.',
